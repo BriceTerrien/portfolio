@@ -1,0 +1,1067 @@
+@import url('variable.css');
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  width: 100%; /* Assurez-vous que le body prend toute la largeur */
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Cela garantit que les particules sont en arrière-plan */
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.loading-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, var(--background), 60%, var(--primary));
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+#svg{
+  width: 250px;
+  height: 200px;
+
+  padding-left: 50px;
+  stroke: var(--text);
+  fill-opacity: 0;
+  stroke-width: 4px;
+  stroke-dasharray: 4500;
+  animation: draw 3s ease-in;
+}
+
+@keyframes draw{
+  0%{
+    stroke-dashoffset: 4500;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-name{
+  color: var(--text);
+  font-size: 20px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.name-container{
+  height: 30px;
+  overflow: hidden;
+}
+
+header .header{
+  font-family: 'Rubik Mono One', sans-serif;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: ease 0.2s;
+
+  padding: 0 3em;
+  box-sizing: border-box;
+  z-index: 5;
+  background: linear-gradient(to bottom,
+  var(--background),                     /* Couleur principale opaque */
+  var(--background10) 10.31%,            /* Légèrement plus clair avec 0.9 alpha */
+  var(--background20) 20.25%,            /* Couleur principale avec 0.8 alpha */
+  var(--background30) 29.83%,            /* Même couleur avec encore moins d'opacité (0.7) */
+  var(--background40) 39.04%,            /* Transition douce vers plus clair (0.6) */
+  var(--background47) 47.88%,            /* Approche d'une couleur plus claire (0.5) */
+  var(--background56) 56.38%,            /* Encore plus clair avec 0.4 alpha */
+  var(--background64) 64.51%,            /* Faible opacité avec 0.3 alpha */
+  var(--background72) 72.3%,             /* Transition vers une couleur presque transparente avec 0.2 alpha */
+  var(--background79) 79.73%,            /* Très légère opacité avec 0.1 alpha */
+  var(--background87) 86.83%             /* Totalement transparent */
+);
+
+visibility: hidden;
+}
+
+.header_link{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header_nav {
+  flex-grow: 1; 
+  display: flex; 
+  justify-content: center; 
+}
+
+.header_menu {
+  display: flex; 
+  gap: 2em; 
+  list-style: none; 
+  padding: 0;
+}
+
+.scrollable-area{
+  width: 100%;
+}
+
+.header_menu-item:hover{
+    color: var(--secondary);
+    transform: scale(1);
+    filter:drop-shadow(0 0 0.3rem var(--primary));
+    transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.header a {
+  text-decoration: none; 
+  color: inherit;   
+  letter-spacing: 1px;     
+}
+
+.header_logo:hover {
+  color: var(--secondary);
+  transform: scale(1);
+  filter:drop-shadow(0 0 0.3rem var(--secondary));
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+  transform: translateY(-5px);
+}
+
+.theme-toggle-btn{
+  position: relative;
+  background-color: var(--text);
+  padding: 1px 1.2px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  max-width: 75px; 
+  overflow: hidden; 
+}
+
+.theme-toggle-btn span{
+  position: absolute;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  background-color: var(--background);
+  border-radius: 50%;
+
+  transition: left .2s ease-in;
+}
+
+.theme-toggle-btn.light > span{
+  left: 55%;
+}
+
+main .hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: visible;
+  position: relative;
+  height: 100vh;  
+
+  margin-bottom: 5em;
+}
+
+.hero_column.left,
+.hero_column.right {
+    display: flex;                 
+    justify-content: center;      
+    align-items: center;           
+    flex: 1;                      
+    margin: 0 5px;
+    
+    text-shadow: 1px 1px 1.5px var(--accent);    
+}
+
+.hero_column.left {
+
+  font-size: 3vw;
+}
+
+.hero_column.right {
+  text-align: center;
+  font-size: 2vw;
+}
+
+.hero_column.middle {
+  display: flex;
+  justify-content: center;     
+  align-items: center;         
+  flex: 1;         
+}
+
+.middle img{
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+.middle{
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+.middle::after, .middle::before {
+  content: '';
+  position: absolute;
+  height: 99%;
+  width: 99%;
+  background-image: conic-gradient(from var(--angle), transparent 10%, var(--accent));
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 50%;
+  padding: 0;
+  animation: 10s spin linear infinite;
+}
+
+@property --angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.middle::before{
+  filter: blur(4rem);
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+
+.item_title {
+  font-size: 3rem; /* Taille du texte plus grande */
+  font-weight: 700; /* Poids de la police plus fort */
+  color: var(--text); /* Couleur du texte */
+  text-align: center;
+
+  position: relative; /* Nécessaire pour le pseudo-élément */
+  transition: transform 0.3s ease, color 0.3s ease; /* Transition douce */
+  
+}
+
+/* Ajout d'un effet de survol */
+.item_title:hover {
+  transform: translateY(-5px); /* Légère translation vers le haut */
+}
+
+/* Ajouter un pseudo-élément pour un effet visuel */
+.about-item_title::after {
+  content: ''; /* Créer un pseudo-élément vide */
+  display: block;
+  width: 17%; /* Largeur complète */
+  height: 15px; /* Hauteur de l'élément */
+  background: linear-gradient(to right, var(--accent), 40%, var(--primary)); /* Dégradé */
+  position: absolute;
+  bottom: 10%; /* Positionné en bas du texte */
+  left: 45.1%; /* Centré horizontalement */
+  border-radius: 5px; /* Coins arrondis */
+  z-index: -1; /* Placé derrière le texte */
+}
+
+.skills-item_title::after {
+  content: ''; /* Créer un pseudo-élément vide */
+  display: block;
+  width: 10.5%; /* Largeur complète */
+  height: 15px; /* Hauteur de l'élément */
+  background: linear-gradient(to right, var(--accent), 40%, var(--primary)); /* Dégradé */
+  position: absolute;
+  bottom: 10%; /* Positionné en bas du texte */
+  left: 48%; /* Centré horizontalement */
+  border-radius: 20px; /* Coins arrondis */
+  z-index: -1; /* Placé derrière le texte */
+}
+
+.project-item_title::after {
+  content: ''; /* Créer un pseudo-élément vide */
+  display: block;
+  width: 15%; /* Largeur complète */
+  height: 15px; /* Hauteur de l'élément */
+  background: linear-gradient(to right, var(--accent), 40%, var(--primary)); /* Dégradé */
+  position: absolute;
+  bottom: 10%; /* Positionné en bas du texte */
+  left: 45.1%; /* Centré horizontalement */
+  border-radius: 5px; /* Coins arrondis */
+  z-index: -1; /* Placé derrière le texte */
+}
+
+.contact-item_title::after {
+  content: ''; /* Créer un pseudo-élément vide */
+  display: block;
+  width: 15%; /* Largeur complète */
+  height: 15px; /* Hauteur de l'élément */
+  background: linear-gradient(to right, var(--accent), 40%, var(--primary)); /* Dégradé */
+  position: absolute;
+  bottom: 3px; /* Positionné en bas du texte */
+  left: 46.2%; /* Centré horizontalement */
+  border-radius: 5px; /* Coins arrondis */
+  z-index: -1; /* Placé derrière le texte */
+}
+
+
+.about_content{
+  margin: 0 8em 20em 8em;
+}
+
+
+.about_content-item {
+  font-size: 1.9em; /* Taille du texte plus grande */
+  text-align: justify;
+}
+
+
+.skills-svg{
+  width: 3em;
+  display: inline-block; /* Pour permettre la rotation */
+  transition: transform 0.5s; /* Une transition de base (facultatif) */
+}
+
+.skills-icons i {
+  font-size: 3em;
+}
+
+.cards-content_title{
+ font-size: 1.5em;
+
+ margin-bottom: 2em;
+
+}
+
+.skills-content{
+  display: flex;
+  justify-content: center;
+  gap : 1em;
+
+  margin-bottom: 18em;
+}
+
+
+.skills-cards {
+  width: auto;
+  max-width: 400px; /* Limite la largeur maximale */
+  border-radius: 15px; /* Coins arrondis plus marqués */
+  background: var(--background); /* Couleur de fond */
+  box-shadow: 0px 0px 8px var(--text) ; 
+  text-align: center;
+  padding: 20px; /* Espace interne */
+  margin: 20px auto; /* Centre la carte avec un espacement autour */
+ 
+  position: relative;
+}
+
+.skills-cards::after, .skills-cards::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent 70%, var(--secondary), var(--accent));
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding : 3px;
+  border-radius: 15px;
+  animation: 10s spin linear infinite;
+}
+
+@property --angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.skills-cards::before{
+  filter: blur(.5rem);
+  opacity: 1;
+}
+
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+.skills-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1em;
+}
+
+
+.skills-icons_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+  width: 10vh;
+
+}
+
+/* project */
+.project_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+}
+
+.project-img_content img {
+  width: 250px; /* Taille de l'image */
+  height: auto; /* Garder les proportions */
+}
+
+.project_content #gear1{
+  width: 6vw;
+  height: 6vh;
+}
+
+.project_content #gear2{
+  width: 7.8vw;
+  height: 7.8vh;
+}
+
+#gear1 {
+  position: absolute; /* Positionnement par-dessus l'image */
+  top: 20%; /* Ajuste la position pour placer l'engrenage où tu veux */
+  right: 40.5%; /* Ajuste en fonction de l'image */
+  animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+}
+
+#gear2 {
+  position: absolute; /* Positionnement par-dessus l'image */
+  top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
+  right: 36.8%; /* Ajuste en fonction de l'image */
+  animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+}
+
+.project_content{
+  margin-bottom: 15em;
+}
+
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+}
+}
+
+@keyframes rotate-counterclockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* partie du formulaire */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+.form-container{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.form-text{
+  display: flex;
+  flex-direction: column;
+
+  width: 30%;
+  margin-right: 4em;
+}
+
+.form-text p{
+  font-size: 1.3em;
+}
+
+.socials{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
+  padding: 0;
+}
+
+.socials-item:hover{
+  transform: scale(2.5);
+}
+
+.socials i{
+  color: var(--secondary);
+}
+
+.form-container form input, textarea{
+
+  font-family: 'Montserrat', sans-serif;
+
+  width: 600px;
+  padding: 1em;
+  margin: 1em 0;
+
+  border: 2px solid var(--secondary);
+  border-radius: 10px;
+  color: black;
+  
+}
+
+.form-container form input::placeholder, textarea::placeholder{
+
+  color: black;
+  
+}
+
+
+
+
+.form-container button{
+  font-family: 'Montserrat', sans-serif;
+  padding: 1em 2em;
+  margin: 1em 0;
+
+  border: 2px solid var(--secondary);
+  border-radius: 10px;
+
+  background-color: var(--secondary);
+  color: var(--text);
+
+  cursor: pointer;
+}
+
+.form-container button:hover{
+ scale: 0.95;
+}
+
+/* footer */
+
+footer{
+  color: var(--text);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1em 0;
+}
+
+
+@media (max-width: 1200px) {
+
+
+  main .hero{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .middle img{
+    max-width: 400px;
+    width: 100%;
+
+  }
+  
+  .middle{
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .wrapper {
+    padding: 0 20px; 
+  }
+
+  .hero_column.left {
+    font-size: 2.5vw;
+  }
+
+  .hero_column.right {
+    font-size: 2.5vw;
+  }
+
+  .loading-page svg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .wrapper h2{
+    font-size: 4vw;
+  }
+  .about_content {
+    margin: 0 4em 14em 4em; /* Ajuste la marge pour les écrans moyens */
+  }
+  
+  .skills-cards {
+    width: 80%; /* Increase width on smaller screens */
+  }
+  .skills-content{
+    margin-bottom: 14em;
+  }
+
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 20%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 38%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 34.2%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+}
+
+@media (max-width: 1100px) {
+  
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 20%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 38%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 33.8%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+}
+
+
+@media (max-width: 992px) {
+
+  .header_logo:hover,
+  .header_menu-item:hover,
+  .item_title:hover,
+  .socials-item:hover {
+    color: inherit; /* Réinitialise la couleur */
+    transform: none; /* Désactive la transformation */
+    filter: none; /* Désactive le filtre */
+    transition: none; /* Désactive la transition */
+  }
+
+  .about-item_title::after {
+    width: 20%; /* Largeur complète */
+    height: 15px; /* Hauteur de l'élément */
+    bottom: 3%; /* Positionné en bas du texte */
+    left: 44%; /* Centré horizontalement */
+  }
+  
+  .skills-item_title::after {
+    width: 12%; /* Largeur complète */
+    height: 15px; /* Hauteur de l'élément */
+    bottom: 7%; /* Positionné en bas du texte */
+    left: 47.5%; /* Centré horizontalement */
+  }
+  .project-item_title::after {
+    width: 17%; /* Largeur complète */
+    height: 15px; /* Hauteur de l'élément */
+    bottom: 6%; /* Positionné en bas du texte */
+    left: 45.1%; /* Centré horizontalement */
+  }
+  
+  .contact-item_title::after {
+    width: 17%; /* Largeur complète */
+    height: 15px; /* Hauteur de l'élément */
+    bottom: 6%; /* Positionné en bas du texte */
+    left: 45.1%; /* Centré horizontalement */
+  }
+
+  .about_content{
+    margin-bottom: 5em;
+  }
+
+  .skills-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 1em;
+  
+    margin-bottom: 5em;
+  }
+
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 20%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 38%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 33.2%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+
+  .form-container{
+    flex-direction:column-reverse;
+     align-items: center;
+   }
+
+   .form-container form input, textarea{
+    display: block;
+    width: 60vw
+  }
+ 
+   .form-text{
+     width: 60%;
+     margin: 0;
+   }
+
+   .form-text p{
+     text-align: center;
+     text-align: justify;
+   }
+}
+
+@media (max-width: 768px) {
+
+  .wrapper{
+    padding: 0;
+    margin: 0;
+  }
+
+  .header{
+    font-size: 0.8em;
+  }
+
+  .theme-toggle-btn {
+    padding: 0.15vw 0.15vw; /* Convertit les pixels en vw */
+    max-width:  6vw;
+  }
+  
+  .theme-toggle-btn img {
+    width: 2vw; /* Convertit 20px en vw */
+    height: 2vw; /* Convertit 20px en vw */
+    align-items: center;
+  }
+  
+  .theme-toggle-btn span {
+    width: 2.6vw; /* Convertit 25px en vw */
+    height: 2.6vw; /* Convertit 25px en vw */
+  }
+  
+  .hero_column.left {
+    font-size: 4vw;
+  }
+
+  .hero_column.right {
+    font-size: 4vw;
+  }
+
+  .middle img {
+    max-width: 400px;
+  }
+
+  .middle {
+    max-width: 400px;
+  }
+
+  .wrapper h2{
+    font-size: 4.5vw;
+  }
+
+  
+
+  .about_content {
+    margin: 0 2em 10em 2em; /* Ajuste la marge pour les petits écrans */
+  }
+
+  .about_content-item {
+    font-size: 3.5vw; 
+  }
+
+  .skills-cards {
+    width: 90%; /* Increase width on smaller screens */
+    padding: 0.5em;
+  }
+
+  .skills-icons_content {
+    width: 80px; /* Réduit la largeur des icônes pour les petits écrans */
+  }
+
+  .skills-content{
+    margin-bottom: 7em;
+  }
+
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 22%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 35%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 30%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+
+  .form-text{
+    font-size: 2vw;
+  }
+
+}
+
+@media (max-width: 670px) {
+
+  .header {
+    padding: 1em;
+    font-size: 2vw;
+  }
+
+  .theme-toggle-btn {
+    padding: 0.1vw 0.3vw; 
+    max-width: 5vw;
+  }
+  
+  .theme-toggle-btn img {
+    width: 1.5vw; /* Convertit 20px en vw */
+    height: 1.5vw; /* Convertit 20px en vw */
+  }
+  
+  .theme-toggle-btn span {
+    width: 2.5vw; /* Convertit 25px en vw */
+    height: 2.5vw; /* Convertit 25px en vw */
+  }
+
+  .logo {
+    font-size: 1.2em;
+  }
+
+  .hero_column {
+    font-size: 5vw; /* Ajuste la taille de la police pour les très petits écrans */
+  }
+
+
+  .middle img {
+    max-width: 300px;
+  }
+
+  .middle {
+    max-width: 300px;
+  }
+
+  .skills-cards {
+    width: 60vw; /* Increase width on smaller screens */
+  }
+
+  .skills-icons svg{
+    width: 2vw;
+  }
+
+  .skills-icons_content {
+    width: 60px; /* Réduit encore la largeur des icônes pour les très petits écrans */
+  }
+
+  .skills-content{
+    margin-bottom: 7em;
+  }
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 22.5%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 32.5%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 29.5%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 28%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .about-item_title::after {
+    width: 20%; /* Largeur complète */
+    height: 10px; /* Hauteur de l'élément */
+    bottom: 3%; /* Positionné en bas du texte */
+    left: 44%; /* Centré horizontalement */
+  }
+  
+  .skills-item_title::after {
+    width: 12%; /* Largeur complète */
+    height: 10px; /* Hauteur de l'élément */
+    bottom: 7%; /* Positionné en bas du texte */
+    left: 47.5%; /* Centré horizontalement */
+  }
+  
+  .contact-item_title::after {
+    width: 17%; /* Largeur complète */
+    height: 10px; /* Hauteur de l'élément */
+    bottom: 6%; /* Positionné en bas du texte */
+    left: 45.1%; /* Centré horizontalement */
+  }
+
+
+  .about_content {
+    margin: 0 1em 9em 1em; 
+  }
+  
+  .cards-content_title{
+    font-size: 3.5vw;
+  }
+
+ .skills-content{
+    flex-basis: calc(50% - 10px); /* Chaque élément prend 50% de la largeur moins l'espace */
+    margin-bottom: 20px; /* Espace entre les lignes d'éléments */
+    padding: 20px; /* Ajoute du padding à chaque élément */
+  }
+
+  .skills-icons{
+    display: flex; /* Active le flexbox */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+    justify-content: center;
+    gap: 1em; /* Espace entre les éléments */
+
+  }
+
+  .skills-icons_content{
+    flex: 0 0 33%;
+  }
+
+  .skills-icons_content p{
+    font-size: 2.5vw;
+  }
+
+  .skills-content{
+    margin-bottom: 9em;
+  }
+
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 23%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 30%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 27%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+
+  .form-text{
+    font-size: 2.5vw;
+  }
+}
+
+@media  (max-width: 500px){
+
+  .project_content #gear1{
+    width: 7vw;
+    height: 7vh;
+  }
+  
+  .project_content #gear2{
+    width: 8.8vw;
+    height: 8.8vh;
+  }
+  
+  
+  #gear1 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 23%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 25%; /* Ajuste en fonction de l'image */
+    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
+  }
+  
+  #gear2 {
+    position: absolute; /* Positionnement par-dessus l'image */
+    top: 29%; /* Ajuste la position pour placer l'engrenage où tu veux */
+    right: 20%; /* Ajuste en fonction de l'image */
+    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+  }
+
+}

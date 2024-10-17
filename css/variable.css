@@ -1,0 +1,39 @@
+:root {
+
+    --text: #e1ebfe ;
+    --background: #010b1f ;
+    --primary: #031347 ;
+    --secondary: #0F2F9E;
+    --accent: #2867EE ;
+
+    --background10: #010b1fe6;
+    --background20: #010b1fCC;
+    --background30: #010b1fb3;
+    --background40: #010b1f99;
+    --background47: #010b1f80;
+    --background56: #010b1f66;
+    --background64: #010b1f4D;
+    --background72: #010b1f33;
+    --background79: #010b1f1A;
+    --background87: #010b1f00;
+    
+}
+
+body.light{
+    --text: #010b1f;
+    --background: #e1ebfe;
+    --primary: #b6c6fc;
+    --secondary: #6080f0;
+    --accent: #114fd4;
+  
+    --background10: #e1ebfeE6;
+    --background20: #e1ebfeCC;
+    --background30: #e1ebfeB3;
+    --background40: #e1ebfe99;
+    --background47: #e1ebfe80;
+    --background56: #e1ebfe66;
+    --background64: #e1ebfe4D;
+    --background72: #e1ebfe33;
+    --background79: #e1ebfe1A;
+    --background87: #e1ebfe00;
+}
