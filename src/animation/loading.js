@@ -2,7 +2,7 @@
 import { gsap } from "gsap";
 
 gsap.fromTo('.loading-page', { opacity: 1, filter: 'blur(0px)'}, {
-    opacity: -.5,
+    opacity: 0,
     filter: 'blur(10px)', // Flou lors de la disparition
     duration: 1,
     delay: 2.4,

@@ -1,20 +1,16 @@
-// Fonction pour initialiser les particules
-function initParticles() {
+export function initParticles() {
     // Récupérer le thème actuel depuis localStorage
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    
     // Définir la couleur des particules en fonction du thème
     const particleColor = currentTheme === 'light' ? '#061019' : '#e6f0f9';
-    const linkColor = currentTheme === 'light' ? '#061019' : '#e6f0f9';
-
     // Initialiser particlesJS avec la couleur appropriée
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 150, // Nombre de particules
+                "value": 100, // Nombre de particules
                 "density": {
                     "enable": true,
-                    "value_area": 789.1476416322727
+                    "value_area": 800
                 }
             },
             "color": {
@@ -39,10 +35,10 @@ function initParticles() {
                 "value": 1,
                 "random": true,
                 "anim": {
-                    "enable": true,
-                    "speed": 0.2,
-                    "opacity_min": 0.1,
-                    "sync": true
+                    "enable": false,
+                    "speed": 0.1,
+                    "opacity_min": 0,
+                    "sync": false
                 }
             },
             "size": {
@@ -56,15 +52,15 @@ function initParticles() {
                 }
             },
             "line_linked": {
-                "enable": false, // Pas de lignes entre les particules
+                "enable": false,
                 "distance": 150,
-                "color": linkColor, // Couleur des lignes en fonction du thème
+                "color":"#ffffff",
                 "opacity": 0.1,
                 "width": 0.5
             },
             "move": {
-                "enable": true,
-                "speed": 0.1,
+                "enable": false,
+                "speed": 0.06,
                 "direction": "none",
                 "random": true,
                 "straight": false,
@@ -116,7 +112,7 @@ function initParticles() {
                 }
             }
         },
-        "retina_detect": true
+        "retina_detect": false
     });
 }
 
@@ -124,26 +120,3 @@ function initParticles() {
 window.onload = function(){
     initParticles();
 }
-
- // Transmettre les événements de la souris au conteneur des particules
- document.addEventListener('mousemove', function(event) {
-    const particlesCanvas = document.querySelector('#particles-js canvas');
-    if (particlesCanvas) {
-      const mouseEvent = new MouseEvent('mousemove', {
-        clientX: event.clientX,
-        clientY: event.clientY
-      });
-      particlesCanvas.dispatchEvent(mouseEvent);
-    }
-  });
-
-  document.addEventListener('click', function(event) {
-    const particlesCanvas = document.querySelector('#particles-js canvas');
-    if (particlesCanvas) {
-      const clickEvent = new MouseEvent('click', {
-        clientX: event.clientX,
-        clientY: event.clientY
-      });
-      particlesCanvas.dispatchEvent(clickEvent);
-    }
-  });

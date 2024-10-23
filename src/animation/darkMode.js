@@ -1,3 +1,5 @@
+import { initParticles } from './particle';
+
 const toggleBtn = document.querySelector('.theme-toggle-btn');
 const body = document.querySelector('body');
 

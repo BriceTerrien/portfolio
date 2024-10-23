@@ -1,30 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="lenis">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
-
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="main.css">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Portfolio de Brice Terrien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Brice Terrien - Développeur Web Fullstack Freelance | Full Stack Web Developer Portfolio</title>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -39,9 +24,9 @@
     <header>
         <div class="header container">
             <div class="header_link">
-                <div class="header_logo">
-                    <a href="/" class="logo-text-one">BRICE T.</a>
-                </div>
+                <!-- <div class="header_logo">
+                    <a href="/" class="logo-text-one">B.T</a>
+                </div> -->
                 <nav class="header_nav" aria-label="Main navigation">
                     <ul class="header_menu" role="menubar">
                         <li class="header_menu-item"><a href="about" role="menuitem">About</a></li>
@@ -62,13 +47,17 @@
     <main>
         <section class="hero container">
             <div class="hero_column left">
-                <h1 class="hero_column_left-item" data-speed="2.5">Brice Terrien</h1>
+                <h1 class="hero_column_left-item">Brice Terrien</h1>
             </div>
             <div class="hero_column middle">
-                <img src="./image/Brice_Terrien_FullStack.jpg" alt="Photo du developpeur" class="hero_column_middle-item" data-speed="1">
+                <picture>
+                    <source srcset="./image/Brice_Terrien_Fullstack.avif" type="image/avif">
+                    <source srcset="./image/Brice_Terrien_Fullstack.webp" type="image/webp">
+                    <img src="./image/Brice_Terrien_Fullstack.jpg" alt="Photo du développeur" class="hero_column_middle-item" loading="lazy">
+                </picture>               
             </div>
             <div class="hero_column right">
-                <h1 class="hero_column_right-item" data-speed="-0.5">Web Developer FullStack</h1>
+                <h1 class="hero_column_right-item">Web Developer FullStack</h1>
             </div>
         </section>
             <section class="about container wrapper" id="about">
@@ -77,10 +66,10 @@
             </div>
             <div class="about_content">
                 <p data-splitting class="about_content-item one">
-                    Salut ! Moi c'est Brice, développeur web junior en reconversion. Après avoir exploré un autre domaine pendant plusieurs années, j'ai décidé de suivre ma vraie passion : le développement web. Depuis, je plonge à fond dans cet univers et je prends plaisir à apprendre, à construire et à résoudre des problèmes complexes.
+                    I'm Brice, a French junior web developer in retraining. After exploring another field for several years, I decided to follow my true passion: web development. Since then, I’ve been diving deep into this universe and I enjoy learning, building and solving complex problems.
                 </p>
                 <p  data-splitting class="about_content-item two ">
-                    Récemment diplômé d'une formation certifiante chez O'clock, où j'ai suivi un parcours intensif en développement web, j'ai acquis une solide base qui me permet de m'adapter rapidement à différents projets et environnements. Toujours à la recherche de nouvelles opportunités et de projets sympas, n'hésitez pas à me contacter pour discuter ou collaborer !
+                    Recently graduated from a certification training at O'clock, where I followed an intensive course in web development, I acquired a solid foundation that allows me to quickly adapt to different projects and environments. Always looking for new opportunities and cool projects, don’t hesitate to contact me to discuss or collaborate !
                 </p>
             </div>
         </section>
@@ -143,7 +132,11 @@
             </div>
             <div class="project_content">
                 <div class="project-img_content">
-                    <img src="./image/work-in-progress.png" alt="image d'une pancarte 'work in progress'">
+                    <picture>
+                        <source srcset="./image/work-in-progress.avif" type="image/avif">
+                        <source srcset="./image/work-in-progress.webp" type="image/webp">
+                        <img src="./image/work-in-progress.jpg" alt="image d'une pancarte 'work in progress'" class="project-img" loading="lazy">
+                    </picture>
                 </div>
                     <svg id="gear1" width="60" height="60" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M36.2463 21.6746L41.3055 19.0628C41.1987 18.1072 41.0204 17.1605 40.772 16.2304L35.1525 15.4691C34.6687 14.3273 34.0237 13.2641 33.2712 12.2903L35.4118 7.14525C34.7039 6.47645 33.9466 5.85923 33.1463 5.29856L28.376 8.22544C27.2553 7.64794 26.0513 7.21481 24.7841 6.93263L23.0587 1.71412C22.571 1.67869 22.0818 1.64062 21.5833 1.64062C21.0848 1.64062 20.597 1.67737 20.1052 1.71412L18.3986 6.88537C17.0992 7.15837 15.867 7.59937 14.7194 8.18081L10.0217 5.29856C9.22214 5.86294 8.46292 6.47325 7.75746 7.14394L9.84027 12.1472C9.02864 13.1644 8.34871 14.2866 7.83808 15.4941L2.39589 16.2291C2.14656 17.1584 1.96913 18.1048 1.86511 19.0601L6.74964 21.5841C6.80339 22.9136 7.03183 24.2012 7.42958 25.4139L3.74367 29.3934C4.17367 30.2597 4.64936 31.1036 5.20164 31.8937L10.6264 30.7558C11.5132 31.7008 12.5278 32.5277 13.6458 33.2141L13.4402 38.6348C14.3324 39.0285 15.256 39.3566 16.211 39.6191L19.6429 35.3102C20.2516 35.3863 20.8684 35.4375 21.4973 35.4375C22.1786 35.4375 22.8451 35.3771 23.4995 35.2892L26.9502 39.6204C27.9043 39.3579 28.8315 39.0298 29.721 38.6387L29.5114 33.1183C30.5734 32.4459 31.5425 31.6431 32.3951 30.7296L37.9609 31.8951C38.5087 31.0975 38.996 30.2618 39.4189 29.3947L35.6161 25.2866C35.9789 24.1369 36.1845 22.9241 36.2436 21.6733L36.2463 21.6746ZM27.8385 27.9523L25.4399 29.4774L23.9644 27.2619C23.1791 27.5632 22.3437 27.7203 21.5 27.7253C19.9065 27.7259 18.362 27.187 17.1297 26.2001C15.8975 25.2133 15.0536 23.8397 14.7419 22.3133C14.4303 20.7869 14.67 19.2022 15.4204 17.8291C16.1709 16.4561 17.3854 15.3796 18.8573 14.7831C20.3291 14.1867 21.9672 14.1071 23.4924 14.558C25.0176 15.0089 26.3355 15.9623 27.2217 17.2559C28.1078 18.5495 28.5074 20.1031 28.3523 21.6522C28.1972 23.2013 27.497 24.6499 26.3711 25.7513L27.8385 27.9523Z" fill="#4F5A65"/>
@@ -176,12 +169,12 @@
                 </form>
                 <div class="form-text">
                     <p>
-                        Vous avez un projet ou une idée que vous souhaitez réaliser ? N'hésitez pas à me contacter pour en discuter. Je serais ravi de vous aider à concrétiser votre projet.
+                        Want to collaborate or simply talk ideas? Get in touch, let's discuss!
                     </p>
-                    <ul class="socials" role="navigation" aria-label="Social media links">
-                        <li class="socials-item"><a href="https://github.com/BriceTerrien?tab=overview&from=2024-10-01&to=2024-10-17" role="menuitem" aria-label="GitHub profile"><i class="fa-brands fa-github fa-xl" aria-hidden="true"></i></a></li>
-                        <li class="socials-item"><a href="https://www.linkedin.com/in/brice-terrien/" role="menuitem" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin fa-xl" aria-hidden="true"></i></a></li>
-                        <li class="socials-item"><a href="#projects" role="menuitem" aria-label="Instagram profile"><i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i></a></li>
+                    <ul class="socials" aria-label="Social media links">
+                        <li class="socials-item"><a href="https://github.com/BriceTerrien?tab=overview&from=2024-10-01&to=2024-10-17" aria-label="GitHub profile"><i class="fa-brands fa-github fa-xl" aria-hidden="true"></i></a></li>
+                        <li class="socials-item"><a href="https://www.linkedin.com/in/brice-terrien/" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin fa-xl" aria-hidden="true"></i></a></li>
+                        <li class="socials-item"><a href="https://www.instagram.com/brice.terrien/" aria-label="Instagram profile"><i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>      
@@ -189,12 +182,12 @@
     </main>
     <footer>
         <div class="footer container wrapper">
-            <p>&copy; 2024 MonSiteWeb. Tous droits réservés.</p>
+            <p>&copy; 2024 Brice T.</p>
+            <p> All rights reserved.</p>   
         </div>   
     </footer>
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-    <script src="./src/animation/particle.js"></script>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/animation/loading.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script type="module" src="./src/main.js" defer></script>
 </body>
 </html>

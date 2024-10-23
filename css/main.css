@@ -4,50 +4,20 @@ html.lenis, html.lenis body {
   height: auto;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
-}
-
 body {
   background-color: var(--background);
   color: var(--text);
-  font-family: 'Lato', sans-serif;
+  font-family: 'karla', sans-serif;
   margin: 0;
   width: 100%; /* Assurez-vous que le body prend toute la largeur */
   overflow-x: hidden; /* Empêche le défilement horizontal */
-}
-
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Cela garantit que les particules sont en arrière-plan */
-}
-
-.wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .loading-page{
   position: fixed;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, var(--background), 60%, var(--primary));
+  background: linear-gradient(to right, var(--background), 60%, var(--secondary));
   width: 100%;
   height: 100vh;
   display: flex;
@@ -66,13 +36,13 @@ body {
   stroke: var(--text);
   fill-opacity: 0;
   stroke-width: 4px;
-  stroke-dasharray: 4500;
+  stroke-dasharray: 5500;
   animation: draw 3s ease-in;
 }
 
 @keyframes draw{
   0%{
-    stroke-dashoffset: 4500;
+    stroke-dashoffset: 5500;
   }
   100%{
     stroke-dashoffset: 0;
@@ -80,6 +50,7 @@ body {
 }
 
 .logo-name{
+  opacity: 0;
   color: var(--text);
   font-size: 20px;
   letter-spacing: 12px;
@@ -91,6 +62,21 @@ body {
   height: 30px;
   overflow: hidden;
 }
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Cela garantit que les particules sont en arrière-plan */
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 
 header .header{
   font-family: 'Rubik Mono One', sans-serif;
@@ -202,6 +188,7 @@ main .hero{
   justify-content: center;
   align-items: center;
 
+  overflow: hidden;
   visibility: visible;
   position: relative;
   height: 100vh;  
@@ -238,11 +225,9 @@ main .hero{
 }
 
 .middle img{
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   height: auto;
-
-  border-radius: 50%;
 
 }
 
@@ -255,38 +240,21 @@ main .hero{
 .middle::after, .middle::before {
   content: '';
   position: absolute;
-  height: 99%;
-  width: 99%;
-  background-image: conic-gradient(from var(--angle), transparent 10%, var(--accent));
+  height: 70%;
+  width: 70%;
+  background-color: var(--text);
   left: 50%;
   top: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
   z-index: -1;
   border-radius: 50%;
-  padding: 0;
-  animation: 10s spin linear infinite;
+  opacity: 0.6;
+  filter: blur(4.5rem);
 }
 
-@property --angle{
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.middle::before{
-  filter: blur(4rem);
+.middle::before {
   opacity: 0.7;
 }
-
-@keyframes spin {
-  from{
-    --angle: 0deg;
-  }
-  to{
-    --angle: 360deg;
-  }
-}
-
 
 .item_title {
   font-size: 3rem; /* Taille du texte plus grande */
@@ -413,13 +381,14 @@ main .hero{
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: conic-gradient(from var(--angle), transparent 70%, var(--secondary), var(--accent));
+  background-image: conic-gradient(from var(--angle), transparent 40%, var(--secondary), var(--accent));
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   z-index: -1;
-  padding : 3px;
+  padding : 0px;
   border-radius: 15px;
+  padding: 2px;
   animation: 10s spin linear infinite;
 }
 
@@ -430,7 +399,7 @@ main .hero{
 }
 
 .skills-cards::before{
-  filter: blur(.5rem);
+  filter: blur(1.5rem);
   opacity: 1;
 }
 
@@ -577,7 +546,7 @@ main .hero{
 
 .form-container form input, textarea{
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'karla', sans-serif;
 
   width: 600px;
   padding: 1em;
@@ -599,7 +568,8 @@ main .hero{
 
 
 .form-container button{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'karla', sans-serif;
+
   padding: 1em 2em;
   margin: 1em 0;
 
@@ -620,16 +590,17 @@ main .hero{
 
 footer{
   color: var(--text);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   padding: 1em 0;
 }
 
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
 
-@media (max-width: 1200px) {
+@media (max-width:1200px) {
 
 
   main .hero{
@@ -695,7 +666,7 @@ footer{
   
 }
 
-@media (max-width: 1100px) {
+@media (max-width:1100px) {
   
   #gear1 {
     position: absolute; /* Positionnement par-dessus l'image */
@@ -713,7 +684,7 @@ footer{
 }
 
 
-@media (max-width: 992px) {
+@media (max-width:992px) {
 
   .header_logo:hover,
   .header_menu-item:hover,
@@ -765,18 +736,8 @@ footer{
     margin-bottom: 5em;
   }
 
-  #gear1 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 20%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 38%; /* Ajuste en fonction de l'image */
-    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
-  }
-  
-  #gear2 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 33.2%; /* Ajuste en fonction de l'image */
-    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
+ #gear1, #gear2 {
+    display: none;
   }
 
   .form-container{
@@ -800,7 +761,7 @@ footer{
    }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
 
   .wrapper{
     padding: 0;
@@ -843,11 +804,17 @@ footer{
     max-width: 400px;
   }
 
+  .middle::after, .middle::before {
+    filter: blur(3rem);
+  }
+  
+  .middle::before {
+    opacity: 0.5;
+  }
+
   .wrapper h2{
     font-size: 4.5vw;
   }
-
-  
 
   .about_content {
     margin: 0 2em 10em 2em; /* Ajuste la marge pour les petits écrans */
@@ -870,31 +837,18 @@ footer{
     margin-bottom: 7em;
   }
 
-  #gear1 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 22%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 35%; /* Ajuste en fonction de l'image */
-    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
-  }
   
-  #gear2 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 30%; /* Ajuste en fonction de l'image */
-    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
-  }
-
   .form-text{
     font-size: 2vw;
   }
 
 }
 
-@media (max-width: 670px) {
+@media (max-width:670px) {
 
   .header {
     padding: 1em;
-    font-size: 2vw;
+    font-size: 2.2vw;
   }
 
   .theme-toggle-btn {
@@ -944,23 +898,11 @@ footer{
   .skills-content{
     margin-bottom: 7em;
   }
-  #gear1 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 22.5%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 32.5%; /* Ajuste en fonction de l'image */
-    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
-  }
-  
-  #gear2 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 29.5%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 28%; /* Ajuste en fonction de l'image */
-    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
-  }
+ 
 }
 
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
 
   .about-item_title::after {
     width: 20%; /* Largeur complète */
@@ -1018,50 +960,8 @@ footer{
     margin-bottom: 9em;
   }
 
-  #gear1 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 23%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 30%; /* Ajuste en fonction de l'image */
-    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
-  }
-  
-  #gear2 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 30%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 27%; /* Ajuste en fonction de l'image */
-    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
-  }
 
   .form-text{
     font-size: 2.5vw;
   }
-}
-
-@media  (max-width: 500px){
-
-  .project_content #gear1{
-    width: 7vw;
-    height: 7vh;
-  }
-  
-  .project_content #gear2{
-    width: 8.8vw;
-    height: 8.8vh;
-  }
-  
-  
-  #gear1 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 23%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 25%; /* Ajuste en fonction de l'image */
-    animation: rotate-clockwise 10s linear infinite; /* Animation de rotation */
-  }
-  
-  #gear2 {
-    position: absolute; /* Positionnement par-dessus l'image */
-    top: 29%; /* Ajuste la position pour placer l'engrenage où tu veux */
-    right: 20%; /* Ajuste en fonction de l'image */
-    animation: rotate-counterclockwise 10s linear infinite; /* Animation de rotation */
-  }
-
 }
